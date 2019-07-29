@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RectProgressBar">
+        <attr name="progressColor" format="color|reference"/>
+        <attr name="defaultColor" format="color|reference"/>
+        <attr name="dividerColor" format="color|reference"/>
+        <attr name="textColor" format="color|reference"/>
+        <attr name="dividerWidth" format="dimension|reference"/>
+        <attr name="textSize" format="dimension|reference"/>
+        <attr name="max" format="integer"/>
+        <attr name="min" format="integer"/>
+        <attr name="progress" format="integer"/>
+        <attr name="compressionText" format="boolean"/>
+        <attr name="omit" format="string|reference"/>
+    </declare-styleable>
+</resources>

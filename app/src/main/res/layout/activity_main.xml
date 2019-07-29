@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <SeekBar
+                android:progress="30"
+                android:max="100"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:paddingStart="56dp"
+                android:paddingEnd="56dp"
+                android:id="@+id/seekbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <com.creepersan.rectprogressbar.RectProgressBar
+                android:id="@+id/progressbar_01"
+                style="@style/baseProgressBar"
+                app:dividerWidth="0dp"
+                app:compressionText="true"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"/>
+
+        <com.creepersan.rectprogressbar.RectProgressBar
+                android:id="@+id/progressbar_02"
+                app:textColor="#FF0000"
+                app:omit="。"
+                app:defaultColor="#99ccaa"
+                app:progressColor="#a62800"
+                app:dividerWidth="60dp"
+                style="@style/baseProgressBar"
+                app:dividerColor="#22a6c4"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>
+
+        <com.creepersan.rectprogressbar.RectProgressBar
+                android:id="@+id/progressbar_03"
+                style="@style/baseProgressBar"
+                app:dividerWidth="80dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>
+
+        <com.creepersan.rectprogressbar.RectProgressBar
+                android:id="@+id/progressbar_04"
+                style="@style/baseProgressBar"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>
+
+        <com.creepersan.rectprogressbar.RectProgressBar
+                android:id="@+id/progressbar_05"
+                style="@style/baseProgressBar"
+                app:compressionText="true"
+                app:omit="~~~"
+                app:dividerWidth="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>
+
+        <com.creepersan.rectprogressbar.RectProgressBar
+                android:id="@+id/progressbar_06"
+                style="@style/baseProgressBar"
+                android:layout_width="match_parent"
+                android:paddingStart="60dp"
+                app:compressionText="true"
+                app:dividerWidth="16dp"
+                android:layout_height="108dp"/>
+
+    </LinearLayout>
+
+</ScrollView>
