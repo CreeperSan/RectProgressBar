@@ -117,8 +117,9 @@ class RectProgressBar : View {
         )
         // 绘制分割线
         mPaint.color = mDividerColor
+        val textEndPositionX : Float // 绘制文字时的文字X轴结束位置
         when{
-            progressXAxisLocation > width-paddingRight-mDividerWidth/2 -> {
+            progressXAxisLocation > width-mDividerWidth/2 - paddingRight -> { // 右边超出
                 canvas.drawRect(
                     width - mDividerWidth - paddingRight.toFloat(),
                     paddingTop.toFloat(),
@@ -126,8 +127,9 @@ class RectProgressBar : View {
                     height - paddingBottom.toFloat(),
                     mPaint
                 )
+                textEndPositionX = paddingLeft + ((width-paddingLeft-paddingRight)-mDividerWidth)/2
             }
-            progressXAxisLocation < paddingLeft + mDividerWidth/2 -> {
+            progressXAxisLocation < paddingLeft + mDividerWidth/2 -> { // 左边超出
                 canvas.drawRect(
                     paddingLeft.toFloat(),
                     paddingTop.toFloat(),
@@ -135,6 +137,7 @@ class RectProgressBar : View {
                     height - paddingBottom.toFloat(),
                     mPaint
                 )
+                textEndPositionX = paddingLeft + mDividerWidth/2
             }
             else -> {
                 canvas.drawRect(
@@ -144,6 +147,7 @@ class RectProgressBar : View {
                     height - paddingBottom.toFloat(),
                     mPaint
                 )
+                textEndPositionX = paddingLeft + ((width-paddingLeft-paddingRight)*progress-mDividerWidth/2)/2
             }
         }
         // 绘制文本
@@ -158,7 +162,7 @@ class RectProgressBar : View {
             )
             canvas.drawText(
                 drawString,
-                paddingLeft + ((width-paddingLeft-paddingRight)*progress-mDividerWidth/2)/2,
+                textEndPositionX,
                 paddingTop+(height-paddingTop-paddingBottom)/2-fontMetrics.ascent/2-fontMetrics.bottom/2,
                 mPaint
             )
